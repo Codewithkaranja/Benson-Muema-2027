@@ -84,9 +84,9 @@ document
 // =========================
 const heroSlides = document.querySelectorAll(".hero-slides .slide");
 const heroImages = [
-  "Benson%20Muema%202027%20passport.png",
-  "Benson%20Muema%202027%20NEDP%20handshake.png",
   "Benson%20Muema%202027%20NEDP.png",
+  "Benson%20Muema%20Handshake.png",
+  "Benson%20Muema%20Passport.png",
   "Benson%20Muema%20new%20Logo.png",
 ];
 
