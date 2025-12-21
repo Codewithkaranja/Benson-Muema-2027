@@ -123,7 +123,7 @@
 
      /* Header Styles */
 header {
-  background-color: black;
+  background-color: transparent;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
@@ -135,7 +135,7 @@ header {
 
       header.scrolled {
         padding: 10px 0;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: transparent;
         color: black;
       }
 
@@ -932,6 +932,7 @@ header {
           padding-top: 50px;
           transition: var(--transition);
           box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          color: white;
         }
 
         .nav-menu.active {

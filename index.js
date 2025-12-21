@@ -84,10 +84,10 @@ document
 // =========================
 const heroSlides = document.querySelectorAll(".hero-slides .slide");
 const heroImages = [
-  "WhatsApp%20Image%202025-11-30%20at%2016.58.38_48968cda.jpg",
-  "WhatsApp%20Image%202025-11-30%20at%2016.58.39_292e8542.jpg",
-  "WhatsApp%20Image%202025-11-30%20at%2016.58.42_b50a06c2.jpg",
-  "WhatsApp%20Image%202025-11-30%20at%2016.58.43_474bacb8.jpg"
+  "Benson%20Muema%202027%20passport.png",
+  "Benson%20Muema%202027%20NEDP%20handshake.png",
+  "Benson%20Muema%202027%20NEDP.png",
+  "Benson%20Muema%20new%20Logo.png",
 ];
 
 
