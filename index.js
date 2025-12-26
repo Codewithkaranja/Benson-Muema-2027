@@ -80,20 +80,18 @@ document
   .forEach((el) => observer.observe(el));
 
 // =========================
-// Hero Slideshow (JS Controlled)
+// Hero Slideshow
 // =========================
 const heroSlides = document.querySelectorAll(".hero-slides .slide");
 const heroImages = [
-  "Benson%20Muema%20maroon.png",
-  "Benson%20Muema%20Handshake.png",
-  "Benson%20Muema%20Passport.png",
-  "Benson%20Muema%20new%20Logo.png",
+  "Benson Muema maroon.png",
+  "Benson Muema navy.png",
+  "Benson Muema white.png",
+  "Benson Muema new Logo.png"
 ];
 
-
-// Assign images and styles
 heroSlides.forEach((slide, i) => {
-  slide.style.backgroundImage = `url(${heroImages[i]})`;
+  slide.style.backgroundImage = `url(${encodeURI(heroImages[i])})`;
   slide.style.backgroundSize = "cover";
   slide.style.backgroundPosition = "center";
   slide.style.position = "absolute";
@@ -105,7 +103,6 @@ heroSlides.forEach((slide, i) => {
   slide.style.transition = "opacity 1s ease-in-out";
 });
 
-// Slideshow logic
 let currentSlide = 0;
 function showSlide(index) {
   heroSlides.forEach((slide, i) => {
@@ -113,6 +110,7 @@ function showSlide(index) {
   });
 }
 showSlide(currentSlide);
+
 setInterval(() => {
   currentSlide = (currentSlide + 1) % heroSlides.length;
   showSlide(currentSlide);
@@ -130,11 +128,11 @@ document.querySelector(".scroll-down")?.addEventListener("click", () => {
 // =========================
 const typewriterElement = document.getElementById("typewriter");
 const messages = [
-    "Vote For Hon. Muema ",
+  "Vote For Hon. Muema ",
   "Leadership with Vision ",
   "Maendeleo Champion ",
   "Uniting Makueni for Better ",
- "Your Voice, Your Future "
+  "Your Voice, Your Future "
 ];
 
 let msgIndex = 0;
@@ -161,52 +159,64 @@ function typeWriter() {
 typeWriter();
 
 // =========================
-/* Form Submission Handlers
+// Volunteer Form (Safe Version)
 // =========================
-["volunteerForm", "contactForm"].forEach((formId) => {
-  const form = document.getElementById(formId);
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Thank you! We will contact you soon.");
-      this.reset();
-    });
-  }
-});
-*/
+const volunteerForm = document.getElementById("volunteerForm");
+
+if (volunteerForm) {
+  volunteerForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(volunteerForm);
+    if (formData.get("_honey")) return;
+
+    formData.append("_captcha", "false");
+    formData.append("_template", "table");
+    formData.append("_subject", "New Volunteer Submission");
+
+    try {
+      await fetch("https://formsubmit.co/bensonmuema05@gmail.com", {
+        method: "POST",
+        body: formData
+      });
+
+      document.getElementById("volunteerSuccessPopup").style.display = "flex";
+      volunteerForm.reset();
+
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+      console.error(error);
+    }
+  });
+}
+
 function closeVolunteerSuccess() {
   document.getElementById("volunteerSuccessPopup").style.display = "none";
 }
 
-// AJAX FormSubmit
-document.getElementById("volunteerForm").addEventListener("submit", async function(event) {
-  event.preventDefault();
+// =========================
+// Swiper Slider
+// =========================
+var visionSwiper = new Swiper(".vision-swiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  loop: true,
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 150,
+    modifier: 2.5,
+    slideShadows: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+  delay: 2000,
+  disableOnInteraction: false,
+},
 
-  const form = event.target;
-  const formData = new FormData(form);
-
-  // Honeypot check
-  if (formData.get("_honey")) return;
-
-  // Add FormSubmit hidden fields
-  formData.append("_captcha", "false");
-  formData.append("_template", "table");
-  formData.append("_subject", "New Volunteer Submission");
-
-  try {
-    await fetch("https://formsubmit.co/bensonmuema05@gmail.com", {
-      method: "POST",
-      body: formData
-    });
-
-    // Show success popup
-    document.getElementById("volunteerSuccessPopup").style.display = "flex";
-
-    // Reset form
-    form.reset();
-
-  } catch (error) {
-    alert("Something went wrong. Please try again.");
-    console.error(error);
-  }
 });

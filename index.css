@@ -457,6 +457,59 @@ header {
         color: var(--emerald);
         margin-bottom: 15px;
       }
+      /* Swiper Container */
+.vision-swiper {
+  width: 100%;
+  padding: 50px 0;
+}
+
+/* Each Slide */
+.vision-swiper .swiper-slide {
+  width: 300px;
+  height: auto;
+}
+
+/* Pillar Card */
+.pillar {
+  background-color: #000;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  border-top: 5px solid var(--emerald);
+  color: rgba(255, 255, 255, 0.85);
+  transition: var(--transition);
+}
+
+/* Hover Effect */
+.pillar:hover {
+  transform: translateY(-10px);
+}
+
+/* Icon */
+.pillar-icon {
+  font-size: 3rem;
+  color: var(--emerald);
+  margin-bottom: 15px;
+}
+
+/* Title */
+.pillar h3 {
+  font-size: 1.4rem;
+  color: var(--emerald);
+  margin-bottom: 12px;
+}
+
+/* Read More Link */
+.pillar .read-more {
+  color: var(--emerald);
+  font-weight: 600;
+}
+
+/* Center Swiper Pagination */
+.swiper-pagination {
+  margin-top: 20px;
+}
+
 
       /* News Section */
       .news {
@@ -1011,3 +1064,4 @@ header {
   0% { transform: scale(0.6); opacity:0; }
   100% { transform: scale(1); opacity:1; }
 }
+
