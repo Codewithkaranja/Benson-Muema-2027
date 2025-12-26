@@ -84,9 +84,9 @@ document
 // =========================
 const heroSlides = document.querySelectorAll(".hero-slides .slide");
 const heroImages = [
-  "Benson Muema maroon.png",
-  "Benson Muema navy.png",
-  "Benson Muema white.png",
+  "Benson Muema Maroon.png",
+  "Benson Muema Navy.png",
+  "Benson Muema White.png",
   "Benson Muema new Logo.png"
 ];
 
