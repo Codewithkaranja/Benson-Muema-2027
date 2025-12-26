@@ -137,7 +137,38 @@
               </li>
             </ul>
             <a
-              href="https://wa.me/+254740 864008?text=Hello%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20campaign"
+              href="https://wa.me/254740864008?text=Hello%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20campaign"
+              class="btn btn-primary"
+              style="margin-top: 20px"
+              target="_blank"
+              >Message Us</a
+            >
+          </div>
+
+           <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Quick and convenient messaging for questions and updates</p>
+            <ul class="contact-details">
+              <li>
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <strong>Diaspora Direct Chat</strong>
+                  <div>+1 929 566 6918</div>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-comments"></i>
+                <div>
+                  <strong>Response Time</strong>
+                  <div>Usually within 1 hour</div>
+                </div>
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/19295666918?text=Hello%2C%20I%20would%20like%20to%20get%20more%20information%20about%20your%20campaign"
               class="btn btn-primary"
               style="margin-top: 20px"
               target="_blank"
@@ -156,26 +187,26 @@
                 <i class="fas fa-inbox"></i>
                 <div>
                   <strong>General Inquiries</strong>
-                  <div>info@bensonmuema.co.ke</div>
+                  <div>info@bensonmuema.com</div>
                 </div>
               </li>
               <li>
                 <i class="fas fa-users"></i>
                 <div>
                   <strong>Volunteer Coordination</strong>
-                  <div>volunteer@bensonmuema.co.ke</div>
+                  <div>volunteer@bensonmuema.com</div>
                 </div>
               </li>
               <li>
                 <i class="fas fa-handshake"></i>
                 <div>
                   <strong>Partnerships</strong>
-                  <div>partnerships@bensonmuema.co.ke</div>
+                  <div>partnerships@bensonmuema.com</div>
                 </div>
               </li>
             </ul>
             <a
-              href="mailto:info@bensonmuema.co.ke"
+              href="mailto:info@bensonmuema.com"
               class="btn btn-primary"
               style="margin-top: 20px"
               >Send Email</a
@@ -189,62 +220,106 @@
     <section class="section" style="background-color: var(--light-gray)">
       <div class="container">
         <div class="contact-main">
-          <div class="contact-form-container">
-            <h3>Send Us a Message</h3>
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" class="form-control" required />
-              </div>
+         <div class="contact-form-container">
+  <h3>Send Us a Message</h3>
+  <form id="contactForm">
 
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" class="form-control" required />
-              </div>
+    <!-- Honeypot anti-spam -->
+    <input type="text" name="_honey" style="display:none">
 
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" class="form-control" />
-              </div>
+    <!-- Hidden FormSubmit controls -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="New Contact Message">
 
-              <div class="form-group">
-                <label for="ward">Ward</label>
-                <select id="ward" class="form-control">
-                  <option value="">Select Your Ward</option>
-                  <option value="wote">Wote</option>
-                  <option value="muvau">Muvau</option>
-                  <option value="kitise/kithuki">Kitise/Kithuki</option>
-                  <option value="kathonzweni">Kathonzweni</option>
-                  <option value="mavindini">Mavindini</option>
-                  <option value="nzaui/kalamba">Nzaui/Kalamba</option>
-                  <option value="mbitini">Mbitini</option>
-                </select>
-              </div>
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" class="form-control" required />
+    </div>
 
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <select id="subject" class="form-control" required>
-                  <option value="">Select Subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="volunteer">Volunteer Opportunity</option>
-                  <option value="event">Event Information</option>
-                  <option value="suggestion">Suggestion/Feedback</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="media">Media Inquiry</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" class="form-control" required />
+    </div>
 
-              <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" class="form-control" required></textarea>
-              </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" class="form-control" />
+    </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%">
-                Send Message
-              </button>
-            </form>
-          </div>
+    <div class="form-group">
+      <label for="ward">Ward</label>
+      <select id="ward" name="ward" class="form-control">
+        <option value="">Select Your Ward</option>
+        <option value="wote">Wote</option>
+        <option value="muvau">Muvau</option>
+        <option value="kitise/kithuki">Kitise/Kithuki</option>
+        <option value="kathonzweni">Kathonzweni</option>
+        <option value="mavindini">Mavindini</option>
+        <option value="nzaui/kalamba">Nzaui/Kalamba</option>
+        <option value="mbitini">Mbitini</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <select id="subject" name="subject" class="form-control" required>
+        <option value="">Select Subject</option>
+        <option value="general">General Inquiry</option>
+        <option value="volunteer">Volunteer Opportunity</option>
+        <option value="event">Event Information</option>
+        <option value="suggestion">Suggestion/Feedback</option>
+        <option value="partnership">Partnership</option>
+        <option value="media">Media Inquiry</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width: 100%">
+      Send Message
+    </button>
+  </form>
+</div>
+
+<!-- Success Popup -->
+<div id="contactSuccessPopup" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;">
+  
+  <div style="
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    max-width:350px;
+    animation: pop 0.4s ease;">
+    
+    <h2 style="color:#0c7d58; margin-bottom:10px;">Success!</h2>
+    <p>Your message has been sent successfully.</p>
+
+    <button onclick="closeContactSuccess()" style="
+      margin-top:20px;
+      padding:10px 20px;
+      background:#0c7d58;
+      color:white;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;">
+      Close
+    </button>
+  </div>
+</div>
 
           <div class="contact-info">
             <h3>Visit Our Office</h3>
@@ -266,9 +341,9 @@
               <div class="info-details">
                 <h4>Phone Numbers</h4>
                 <p>
-                  <a href="tel:+254740 864008">+254 740 864 008 </a>(Campaign
-                  Hotline)<br /><a href="tel:+254740 864008">+254 740 864 008</a>
-                  (Office Line)
+                  <a href="tel:+254740864008">+254 740 864 008 </a>(Campaign
+                  Hotline)<br /><a href="tel:+19295666918">+19295666918</a>
+                  (Diaspora Line)
                 </p>
               </div>
             </div>
@@ -279,7 +354,7 @@
               </div>
               <div class="info-details">
                 <h4>Email Address</h4>
-                <p>info@bensonmuema.co.ke</p>
+                <p>info@bensonmuema.com</p>
               </div>
             </div>
 
@@ -408,6 +483,38 @@
               >Get Directions</a
             >
           </div>
+          <div class="office-card">
+            <div class="office-header">
+              <div class="office-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div>
+                <h3>Diaspora Office</h3>
+              </div>
+            </div>
+
+            <div class="office-details">
+              <p>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Diaspora Office</span>
+              </p>
+              <p>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+19295666918"><span>+1 929 566 6918</span></a>
+              </p>
+              <p>
+                <i class="fas fa-clock"></i>
+                <span>Mon-Fri: 9AM-5PM, Sat: 9AM-1PM</span>
+              </p>
+            </div>
+            <a
+              href="https://maps.app.goo.gl/grWoT37q9yACTU2q9"
+              class="btn btn-outline"
+              target="_blank"
+              style="color: var(--emerald); border-color: var(--emerald)"
+              >Get Directions</a
+            >
+          </div>
         </div>
       </div>
     </section>
@@ -431,8 +538,8 @@
           </p>
           <p>
             <i class="fas fa-envelope"></i
-            ><a href="mailto:info@bensonmuema.co.ke">
-              <span>info@bensonmuema.co.ke</span></a
+            ><a href="mailto:info@bensonmuema.com">
+              <span>info@bensonmuema.com</span></a
             >
           </p>
           <a
@@ -532,7 +639,7 @@
               <p>
                 Absolutely! We have a dedicated team of volunteers ready to
                 support community initiatives. Contact our volunteer coordinator
-                at volunteer@bensonmuema.co.ke to discuss your event needs.
+                at volunteer@bensonmuema.com to discuss your event needs.
               </p>
             </div>
           </div>
@@ -612,13 +719,18 @@
                 >
               </li>
               <li>
-                <a href="tel:+254740 864008"
+                <a href="tel:+254740864008"
                   ><i class="fas fa-phone"></i> +254 740 864 008
-                </a>
+                </a>(Kenya Hotline)
+              </li>
+                <li>
+                <a href="tel:+19295666918"
+                  ><i class="fas fa-phone"></i> +1 929 566 6918
+                </a> (Diaspora HotLine)
               </li>
               <li>
-                <a href="mailto:info@bensonmuema.co.ke"
-                  ><i class="fas fa-envelope"></i> info@bensonmuema.co.ke</a
+                <a href="mailto:info@bensonmuema.com"
+                  ><i class="fas fa-envelope"></i> info@bensonmuema.com</a
                 >
               </li>
             </ul>

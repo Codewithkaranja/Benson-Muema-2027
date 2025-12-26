@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         }
 
-        // Volunteer form submission
+        /* Volunteer form submission
         const volunteerForm = document.getElementById("volunteerForm");
         if (volunteerForm) {
           volunteerForm.addEventListener("submit", function (e) {
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Reset form
             this.reset();
           });
-        }
+        }*/
 
         // FAQ functionality
         const faqItems = document.querySelectorAll(".faq-item");
@@ -132,3 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
       });
+      document.getElementById("volunteerForm").addEventListener("submit", function() {
+  alert("🎉 Thank you! Your volunteer registration has been submitted successfully!");
+});

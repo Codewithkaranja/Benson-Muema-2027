@@ -1007,3 +1007,7 @@ header {
           grid-template-columns: 1fr;
         }
       }
+      @keyframes pop {
+  0% { transform: scale(0.6); opacity:0; }
+  100% { transform: scale(1); opacity:1; }
+}

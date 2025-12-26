@@ -84,7 +84,7 @@ document
 // =========================
 const heroSlides = document.querySelectorAll(".hero-slides .slide");
 const heroImages = [
-  "Benson%20Muema%202027%20NEDP.png",
+  "Benson%20Muema%20maroon.png",
   "Benson%20Muema%20Handshake.png",
   "Benson%20Muema%20Passport.png",
   "Benson%20Muema%20new%20Logo.png",
@@ -161,7 +161,7 @@ function typeWriter() {
 typeWriter();
 
 // =========================
-// Form Submission Handlers
+/* Form Submission Handlers
 // =========================
 ["volunteerForm", "contactForm"].forEach((formId) => {
   const form = document.getElementById(formId);
@@ -171,5 +171,42 @@ typeWriter();
       alert("Thank you! We will contact you soon.");
       this.reset();
     });
+  }
+});
+*/
+function closeVolunteerSuccess() {
+  document.getElementById("volunteerSuccessPopup").style.display = "none";
+}
+
+// AJAX FormSubmit
+document.getElementById("volunteerForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  // Honeypot check
+  if (formData.get("_honey")) return;
+
+  // Add FormSubmit hidden fields
+  formData.append("_captcha", "false");
+  formData.append("_template", "table");
+  formData.append("_subject", "New Volunteer Submission");
+
+  try {
+    await fetch("https://formsubmit.co/bensonmuema05@gmail.com", {
+      method: "POST",
+      body: formData
+    });
+
+    // Show success popup
+    document.getElementById("volunteerSuccessPopup").style.display = "flex";
+
+    // Reset form
+    form.reset();
+
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+    console.error(error);
   }
 });

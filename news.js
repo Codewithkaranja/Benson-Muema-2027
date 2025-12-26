@@ -74,7 +74,7 @@
         newsObserver.observe(card);
       });
 
-      // Newsletter form submission
+      /* Newsletter form submission
       const newsletterForm = document.querySelector(".newsletter-form");
 
       newsletterForm.addEventListener("submit", function (e) {
@@ -85,6 +85,7 @@
         );
         this.reset();
       });
+      */
 
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -103,3 +104,36 @@
           }
         });
       });
+
+
+      //newsletter form submission popup
+      function closeNewsletterSuccess() {
+  document.getElementById("newsletterSuccessPopup").style.display = "none";
+}
+
+document.getElementById("newsletterForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  // Honeypot check
+  if (formData.get("_honey")) return;
+
+  try {
+    await fetch("https://formsubmit.co/bensonmuema05@gmail.com", {
+      method: "POST",
+      body: formData
+    });
+
+    // Show success popup
+    document.getElementById("newsletterSuccessPopup").style.display = "flex";
+
+    // Reset form
+    form.reset();
+
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+    console.error(error);
+  }
+});

@@ -29,7 +29,7 @@
         });
       });
 
-      // Contact form submission
+      /* Contact form submission
       const contactForm = document.getElementById("contactForm");
 
       contactForm.addEventListener("submit", function (e) {
@@ -47,7 +47,7 @@
 
         // Reset form
         this.reset();
-      });
+      });*/
 
       // FAQ functionality
       const faqItems = document.querySelectorAll(".faq-item");
@@ -107,3 +107,40 @@
           }
         });
       });
+
+      function closeContactSuccess() {
+  document.getElementById("contactSuccessPopup").style.display = "none";
+}
+
+// AJAX form submission
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const formData = new FormData(form);
+
+  // Honeypot check
+  if (formData.get("_honey")) return;
+
+  // Add FormSubmit hidden fields
+  formData.append("_captcha", "false");
+  formData.append("_template", "table");
+  formData.append("_subject", "New Contact Message");
+
+  try {
+    await fetch("https://formsubmit.co/bensonmuema05@gmail.com", {
+      method: "POST",
+      body: formData
+    });
+
+    // Show success popup
+    document.getElementById("contactSuccessPopup").style.display = "flex";
+
+    // Reset form
+    form.reset();
+
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+    console.error(error);
+  }
+});

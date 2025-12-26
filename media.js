@@ -105,7 +105,7 @@
         card.addEventListener("click", function () {
           // In a real implementation, this would open a modal with the video player
           alert(
-            "Video player would open here. In a real implementation, this would embed a YouTube or Vimeo player."
+            "Campaign Videos Coming Soon.Thank You For Your Support. ~  Benson Muema"
           );
         });
       });
@@ -117,7 +117,7 @@
         button.addEventListener("click", function (e) {
           e.preventDefault();
           alert(
-            "Download would start. In a real implementation, this would trigger a file download."
+            "Campaign Videos Coming Soon.Thank You For Your Support. ~  Benson Muema"
           );
         });
       });
