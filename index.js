@@ -82,16 +82,23 @@ document
 // =========================
 // Hero Slideshow
 // =========================
+// =========================
+// Hero Slideshow (Optimized for PageSpeed)
+// =========================
+
 const heroSlides = document.querySelectorAll(".hero-slides .slide");
 const heroImages = [
-  "Benson Muema Maroon.png",
-  "Benson Muema Navy.png",
-  "Benson Muema White.png",
+  "Benson Muema Maroon.webp",
+  "Benson Muema Navy.webp",
+  "Benson Muema White.webp",
   "Benson Muema new Logo.png"
 ];
 
-heroSlides.forEach((slide, i) => {
-  slide.style.backgroundImage = `url(${encodeURI(heroImages[i])})`;
+// 1️⃣ Load ONLY the first image immediately
+heroSlides[0].style.backgroundImage = `url(${encodeURI(heroImages[0])})`;
+
+// Apply shared styles
+heroSlides.forEach((slide) => {
   slide.style.backgroundSize = "cover";
   slide.style.backgroundPosition = "center";
   slide.style.position = "absolute";
@@ -100,21 +107,33 @@ heroSlides.forEach((slide, i) => {
   slide.style.width = "100%";
   slide.style.height = "100%";
   slide.style.opacity = 0;
-  slide.style.transition = "opacity 1s ease-in-out";
+ // slide.style.transition = "opacity 1s ease-in-out";
 });
 
+// Make slide 1 visible
+heroSlides[0].style.opacity = 1;
+
+// 2️⃣ Lazy-load the other images after first paint
+setTimeout(() => {
+  for (let i = 1; i < heroSlides.length; i++) {
+    heroSlides[i].style.backgroundImage = `url(${encodeURI(heroImages[i])})`;
+  }
+}, 800); // load after page becomes interactive
+
 let currentSlide = 0;
+
 function showSlide(index) {
   heroSlides.forEach((slide, i) => {
     slide.style.opacity = i === index ? 1 : 0;
   });
 }
-showSlide(currentSlide);
 
+// 3️⃣ Start slideshow after lazy-loading begins
 setInterval(() => {
   currentSlide = (currentSlide + 1) % heroSlides.length;
   showSlide(currentSlide);
-}, 5000);
+}, 3000);
+
 
 // =========================
 // Scroll Down Button
