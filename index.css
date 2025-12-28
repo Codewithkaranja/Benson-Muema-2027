@@ -124,7 +124,7 @@
      /* Header Styles */
 header {
   background-color: transparent;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  
   position: fixed;
   width: 100%;
   top: 0;
@@ -134,7 +134,7 @@ header {
 }
 
       header.scrolled {
-        padding: 10px 0;
+       
         background-color: transparent;
         color: black;
       }
@@ -143,7 +143,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  
 }
       .logo {
         display: flex;
@@ -151,7 +151,7 @@ header {
       }
 
       .logo-img {
-  height: 100px;
+  height: 200px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
@@ -235,6 +235,7 @@ header {
   overflow: hidden;
   color: var(--white);
   font-family: 'Jost', sans-serif;
+  margin-top: 0px;
 }
 
 .hero-overlay {
@@ -1044,10 +1045,12 @@ header {
       }
 
       @media (max-width: 576px) {
-        .logo-text {
-          font-size: 1.2rem;
-        }
-        
+            .logo-img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
 
         .hero h1 {
           font-size: 1.8rem;

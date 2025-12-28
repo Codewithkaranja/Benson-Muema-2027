@@ -18,7 +18,7 @@
         font-family: "Jost", sans-serif;
         line-height: 1.6;
         color: var(--dark-gray);
-        background-color: var(--white);
+        background-color: white;
         overflow-x: hidden;
       }
 
@@ -112,8 +112,8 @@
 
          /* Header Styles */
 header {
-  background-color: black;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background-color:transparent;
+ 
   position: fixed;
   width: 100%;
   top: 0;
@@ -132,7 +132,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  
 }
       .logo {
         display: flex;
@@ -140,7 +140,7 @@ header {
       }
 
       .logo-img {
-  height: 100px;
+  height: 200px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
@@ -169,7 +169,7 @@ header {
 
     .nav-menu a {
   font-weight: 500;
-  padding: 5px 0;
+  
   position: relative;
   transition: var(--transition);
 }
@@ -216,7 +216,7 @@ header {
 
       /* Page Header */
       .page-header {
-        height: 60vh;
+        height: 70vh;
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
           url("Benson\ Muema\ 2027\ mountains.png");
         background-size: cover;
@@ -225,7 +225,7 @@ header {
         align-items: center;
         color: var(--white);
         text-align: center;
-        margin-top: 80px;
+        margin-top: 0px;
       }
 
       .page-header-content {
@@ -734,10 +734,12 @@ header {
       }
 
       @media (max-width: 576px) {
-        .logo-text {
-          font-size: 1.2rem;
-        }
-
+         .logo-img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
         .page-header h1 {
           font-size: 1.8rem;
         }

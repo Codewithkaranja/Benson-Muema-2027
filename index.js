@@ -91,7 +91,7 @@ const heroImages = [
   "Benson Muema Maroon.webp",
   "Benson Muema Navy.webp",
   "Benson Muema White.webp",
-  "Benson Muema new Logo.png"
+  "Benson Muema favicon.png"
 ];
 
 // 1️⃣ Load ONLY the first image immediately
